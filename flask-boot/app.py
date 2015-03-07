@@ -1,5 +1,6 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template
+import requests
 
 # create the application object
 app = Flask(__name__)
@@ -13,6 +14,12 @@ def home():
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
+
+@app.route('/apiget')
+def get_data():
+	r = requests.get('http://private-59c72-metapi.apiary-mock.com/notes').content ##get content from apiary
+
+
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
