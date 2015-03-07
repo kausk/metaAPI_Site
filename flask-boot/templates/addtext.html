@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Add text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Comment on the Meta Object!</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Meta AR Number" name="number" value="{{
+          request.form.number }}">
+
+
+          <textarea class="form-control" rows="3" name="text" value="{{request.form.text }}"></textarea>
+
+        <input class="btn btn-default" type="submit" value="Comment">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+
+    <!-- stylesheet -->
+    <link href="/static/css/literallycanvas.css" rel="stylesheet">
+
+    <!-- dependency: React.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.10.0/react-with-addons.js"></script>
+
+    <!-- Literally Canvas -->
+    <script src="/static/js/literallycanvas.js"></script>
+
+<div class="container">
+    <!-- where the widget goes. you can do CSS to it. -->
+    <div class="literally"></div>
+
+    <!-- kick it off -->
+    <script>
+        // Look ma, no jQuery!
+        LC.init(
+            document.getElementsByClassName('literally')[0],
+            {imageURLPrefix: '/static/img'}
+        );
+
+        /* or if you just love jQuery,
+            $('.literally').literallycanvas({imageURLPrefix: '/static/img'})
+        */
+    </script>
+</div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Add a picture/video</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+</head>
+
+
+  <body>
+    <div class="container">
+      <h1>Add a picture/video!</h1>
+      <br />
+      <form action="" method="post">
+        <input type="text" placeholder="Meta AR Number" name="number" value="{{
+          request.form.number }}">
+          <br />
+
+        <input type="text" placeholder="Picture Link" name="pic" value="{{
+          request.form.pic }}">
+
+
+        
+
+        <br />
+
+        <input class="btn btn-default" type="submit" value="Comment">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
