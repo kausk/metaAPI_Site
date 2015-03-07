@@ -1,6 +1,8 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template
 import requests
+import simplejson as json
+from urllib2 import Request, urlopen
 
 # create the application object
 app = Flask(__name__)
@@ -17,7 +19,9 @@ def welcome():
 
 @app.route('/apiget')
 def get_data():
-	r = requests.get('http://private-59c72-metapi.apiary-mock.com/notes').content ##get content from apiary
+	request = Request('http://private-59c72-metapi.apiary-mock.com/notes') ##get content from apiary
+	response_body = urlopen(request).read()
+	return response_body
 
 
 
