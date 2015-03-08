@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meta Object 1</h1>
+      <br>
+      <table>
+        <tr>
+          <td>
+            <img src="http://blogs.missouristate.edu/publications/files/2011/07/QR-code-t-shirt.jpg"></img>
+          </td>
+          </tr>
+        </table>
+            <a class="twitter-timeline" href="https://twitter.com/hashtag/augmentedreality" data-widget-id="574381543705042946">#augmentedreality Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <table>
+            <tr>
+              <td>
+        <ul class="entries">
+          {% for comment in rcomments %}
+            <li><h4>{{ comment }}</h4></li>
+          {% else %}
+            <li><em>Unbelievable.  No entries here so far</em>
+          {% endfor %}
+        </ul>
+          </td>
+          <td>
+            <ul class="entries">
+              {% for pic in rpictures %}
+            <img src="{{ pic }}"></img>
+              {% else %}
+                <li><em>Unbelievable.  No entries here so far</em>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+
+
+</div>
+  </body>
+</html>

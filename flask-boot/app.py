@@ -11,6 +11,9 @@ import pymongo
 MONGODB_URI = "mongodb://meta:meta@dbh76.mongolab.com:27767/armeta" 
 client = pymongo.MongoClient(MONGODB_URI)
 db = client.get_default_database()
+comments = db['comments']
+pics = db['pics']
+
 
 
 
@@ -71,7 +74,6 @@ def add_text():
         }
 
      	]
-        comments = db['comments']
         comments.insert(Data)
 
         ##return to feed
@@ -102,7 +104,6 @@ def add_pic():
         }
 
      	]
-        pics = db['pics']
         pics.insert(Data)
 
         ##return to feed
@@ -111,7 +112,21 @@ def add_pic():
 
 @app.route('/one', methods=['GET', 'POST'])
 def one():
-	return render_template('one.html')
+	#rcomments = comments.find({'number': '1'})
+	rcomments = comments.find({'number': '1'})
+	commentslist = []
+	for r in rcomments:
+		commentslist.append(r['text'])
+
+	rpictures = pics.find({'number': '1'})##comments
+
+	picslist = []
+	for r in rpictures:
+		picslist.append(r['pic'])
+
+
+
+	return render_template('one.html', rcomments=commentslist, rpictures=picslist)
 
 
 

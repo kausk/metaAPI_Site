@@ -2,7 +2,7 @@
 <html>
   <head>
     <div class="container">
-    <h1>Meta AR Hackathon</h1>
+    <h1>Bridged Objects</h1>
   </div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -10,29 +10,29 @@
   <body>
 
   	<div class="container">
-  		<img src="http://blogs.missouristate.edu/publications/files/2011/07/QR-code-t-shirt.jpg"></img>
+  		<img src="http://i.imgur.com/4BZdHWim.jpg"></img>
       <br />
 
 
-      <a href="{{ url_for('add_text') }}"><button>Comment on This!</button></a>
+      <a href="{{ url_for('add_text', item='1') }}"><button>Comment on This!</button></a>
 
 		  <br />
-      <a href="{{ url_for('add_pic') }}"><button>Upload a picture/video</button></a>
+      <a href="{{ url_for('add_pic', item='1') }}"><button>Upload a picture/video</button></a>
     </div>
     <div class="container">
-      <img src="http://www.crazynative.com/images/QR-T-Shirt.jpg"></img>
+      <img src="http://i.imgur.com/OloYSUJm.jpg"></img>
       <br />
-      <a href="{{ url_for('add_text') }}"><button>Comment on This!</button></a>
+      <a href="{{ url_for('add_text', item='2') }}"><button>Comment on This!</button></a>
       <br />
-      <a href="{{ url_for('add_pic') }}"><button>Upload a picture/video</button></a>
+      <a href="{{ url_for('add_pic', item='2') }}"><button>Upload a picture/video</button></a>
     </div>
 
     <div class="container">
-      <img src="http://getvoltage.com/wp-content/uploads/2011/02/green_android_qr_code_t_shirt-p235698893932582886t560_400.jpg"></img>
+      <img src="http://i.imgur.com/ALf8kcim.jpg"></img>
       <br />
-      <a href="{{ url_for('add_text') }}"><button>Comment on This!</button></a>
+      <a href="{{ url_for('add_text', item='3') }}"><button>Comment on This!</button></a>
       <br />
-      <a href="{{ url_for('add_pic') }}"><button>Upload a picture/video</button></a>
+      <a href="{{ url_for('add_pic', item='3') }}"><button>Upload a picture/video</button></a>
     </div>
 
 

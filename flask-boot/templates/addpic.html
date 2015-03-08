@@ -10,7 +10,7 @@
 
   <body>
     <div class="container">
-      <h1>Add a picture/video!</h1>
+      <h1>Add a picture/video for Item</h1>
       <br />
       <form action="" method="post">
         <input type="text" placeholder="Meta AR Number" name="number" value="{{
@@ -25,11 +25,41 @@
 
         <br />
 
-        <input class="btn btn-default" type="submit" value="Comment">
+        <input class="btn btn-default" type="submit" value="Submit Media">
       </form>
       {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
       {% endif %}
     </div>
+
+    <div class="container">
+          <!-- stylesheet -->
+    <link href="/static/css/literallycanvas.css" rel="stylesheet">
+
+    <!-- dependency: React.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.10.0/react-with-addons.js"></script>
+
+    <!-- Literally Canvas -->
+    <script src="/static/js/literallycanvas.js"></script>
+
+<div class="container">
+    <!-- where the widget goes. you can do CSS to it. -->
+    <div class="literally"></div>
+
+    <!-- kick it off -->
+    <script>
+        // Look ma, no jQuery!
+        LC.init(
+            document.getElementsByClassName('literally')[0],
+            {imageURLPrefix: '/static/img'}
+        );
+
+        /* or if you just love jQuery,
+            $('.literally').literallycanvas({imageURLPrefix: '/static/img'})
+        */
+    </script>
+
+    </div>
+
   </body>
 </html>
